@@ -1,8 +1,14 @@
 #Crear rutas en el projecto
-npm i react-router-dom
+npm i --save react-router-dom
 
 #Agregar redux a react
-npm install redux react-redux
+npm i --save redux react-redux
 
 #Más paquetes de redux
-npm install redux-thunk
+npm i --save redux-thunk
+
+#Firebase
+npm i --save firebase
+
+#Firebase con Redux 
+npm i --save react-redux-firebase redux-firestore
