@@ -1,9 +1,9 @@
-import { firestore } from "firebase";
+// import { firestore } from "firebase";
 
 export const createProject = (project) => {
     return( dispatch, getState, {getFirebase, getFirestore}) => {
         //hacer una llamada asincrona a la base de datos
-        const firestore = getFirestore()
+        const firestore = getFirestore();
         firestore.collection('projects').add({
             ...project, 
             authorFirstName: "Esperanza",
