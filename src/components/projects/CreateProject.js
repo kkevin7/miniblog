@@ -28,8 +28,9 @@ export class CreateProject extends Component {
         if (!auth.uid) return <Redirect to='/signin' /> ;
         return (
             <div className="container">
+            <div className="card z-depth-3">
                 <form onSubmit={this.handeSubmit} className="white">
-                    <h5 className="grey-text text-darken-3">New Post</h5>
+                    <h5 className="grey-text text-darken-3">Nueva Publicación</h5>
                     <div className="input-field">
                         <label htmlFor="title">Titulo</label>
                         <input type="text" id="title" onChange={this.handleChange}/>
@@ -42,6 +43,7 @@ export class CreateProject extends Component {
                         <button className="btn pink lighten-1 z-depth-0">Publish</button>
                     </div>
                 </form>
+                </div>
             </div>
         )
     }

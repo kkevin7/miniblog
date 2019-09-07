@@ -3,9 +3,8 @@ import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import {Redirect} from 'react-router-dom';
-import moment from 'moment';
-
-
+import moment from 'moment' ;
+import 'moment/locale/es';
 
 const ProjectDetails = (props) => {
     
@@ -13,14 +12,14 @@ const ProjectDetails = (props) => {
         if (!auth.uid) return <Redirect to='/signin' /> ;
     if (project) {
         return (
-            <div className="container section project-datails">
-                <div className="card z-depth-0">
+            <div className="container section project-datails ">
+                <div className="card z-depth-3">
                     <div className="card-content">
                         <span className="card-title">{project.title} </span>
                         <p>{project.content}</p>
                     </div>
                     <div className="card-action great lighten-4 grey-text">
-                        <div>Publicado por {project.authorFirstName} {project.authorLastName} </div>
+                        <div>Publicado por <span className="pink-text">{project.authorFirstName} {project.authorLastName}</span> </div>
                         <div>{moment(project.createdAt.toDate()).format('LLLL')}</div>
                     </div> 
                 </div>

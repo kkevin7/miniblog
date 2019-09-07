@@ -29,8 +29,9 @@ export class SignUp extends Component {
 
         return (
             <div className="container">
+            <div className="card z-depth-3">
                 <form onSubmit={this.handeSubmit} className="white">
-                    <h5 className="grey-text text-darken-3">Sign Up</h5>
+                    <h5 className="grey-text text-darken-3">Registrarse</h5>
                     <div className="input-field">
                         <label htmlFor="email">Correo</label>
                         <input type="email" id="email" onChange={this.handleChange}/>
@@ -44,16 +45,17 @@ export class SignUp extends Component {
                         <input type="text" id="lastName" onChange={this.handleChange}/>
                     </div>
                     <div className="input-field">
-                        <label htmlFor="password">Password</label>
+                        <label htmlFor="password">Contraseña</label>
                         <input type="password" id="password" onChange={this.handleChange}/>
                     </div>
                     <div className="input">
-                        <button className="btn pink lighten-1 z-depth-0">SIGN UP</button>
+                        <button className="btn pink lighten-1 z-depth-0">Registrarse</button>
                         <div className="red-text center">
                             {authError ? <p>{authError}</p> : null}
                         </div>
                     </div>
                 </form>
+                </div>
             </div>
         )
     }
