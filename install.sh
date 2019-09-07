@@ -15,3 +15,6 @@ npm i --save react-redux-firebase redux-firestore
 
 #Downgrade version 6 to 5.1.1 (problemas con version 6)
 npm i --save react-redux@^5.1.1
+
+#Instalar moment para formatear el dia
+npm i --save moment
