@@ -1,20 +1,19 @@
-// import { firestore } from "firebase";
-
 export const createProject = (project) => {
-    return( dispatch, getState, {getFirebase, getFirestore}) => {
+    return (dispatch, getState, { getFirebase, getFirestore }) => {
         //hacer una llamada asincrona a la base de datos
         const firestore = getFirestore();
+        const profile = getState().firebase.profile;
+        const authorId = getState().firebase.auth.uid;
         firestore.collection('projects').add({
-            ...project, 
-            authorFirstName: "Esperanza",
-            authorLastName: "de Morales",
-            authorId: 12345,
+            ...project,
+            authorFirstName: profile.firstName,
+            authorLastName: profile.lastName,
+            authorId: authorId,
             createAt: new Date()
-        }).then( () =>
-            dispatch({type: 'CREATE_PROJECT', project}
-        )).then( (err) => {
-            dispatch({type: 'CREARE_PROJECT_ERROR'}, err)
+        }).then(() => {
+            dispatch({ type: 'CREATE_PROJECT_SUCCESS' });
+        }).catch(err => {
+            dispatch({ type: 'CREATE_PROJECT_ERROR' }, err);
         });
-        
     }
 };

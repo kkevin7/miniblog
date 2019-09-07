@@ -19,7 +19,8 @@ export class CreateProject extends Component {
     handeSubmit = (e) => {
         e.preventDefault();
         // console.log(this.state);
-        this.props.createProject(this.state)
+        this.props.createProject(this.state);
+        this.props.history.push('/');
     }
 
     render() {
@@ -28,17 +29,17 @@ export class CreateProject extends Component {
         return (
             <div className="container">
                 <form onSubmit={this.handeSubmit} className="white">
-                    <h5 className="grey-text text-darken-3">Create new Project</h5>
+                    <h5 className="grey-text text-darken-3">New Post</h5>
                     <div className="input-field">
                         <label htmlFor="title">Titulo</label>
                         <input type="text" id="title" onChange={this.handleChange}/>
                     </div>
                     <div className="input-field">
-                        <label htmlFor="content">Project Content</label>
+                        <label htmlFor="content">Content</label>
                         <textarea id="content" className="materialize-textarea" onChange={this.handleChange}></textarea>
                     </div>
                     <div className="input">
-                        <button className="btn pink lighten-1 z-depth-0">Login</button>
+                        <button className="btn pink lighten-1 z-depth-0">Publish</button>
                     </div>
                 </form>
             </div>
